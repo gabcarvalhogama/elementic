@@ -84,7 +84,7 @@
             ] );
 
 
-            $message = preg_match('/<div class=\"well text-center\">(.*?)<\/div>/s', $response['body'], $match);
+            // $message = preg_match('/<div class=\"well text-center\">(.*?)<\/div>/s', $response['body'], $match);
 
 
             
