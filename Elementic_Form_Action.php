@@ -79,7 +79,7 @@
             }
 
 
-            $response = wp_remote_post(rtrim($settings['mautic_url']['url'],"/")."/form/submit", [
+            $response = wp_remote_post(rtrim($settings['mautic_url']['url'],"/")."/form/submit?formId=".$settings['mautic_form_id'], [
                 'body' => ["mauticform" => $fields]
             ] );
 
@@ -87,7 +87,7 @@
             // $message = preg_match('/<div class=\"well text-center\">(.*?)<\/div>/s', $response['body'], $match);
 
 
-            
+
 
             // echo trim(strip_tags($match[1]));
 
