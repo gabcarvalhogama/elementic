@@ -3,7 +3,7 @@
 Olá, bem-vindo ao repositório do Elementic, um plugin/extensão que adiciona o Mautic ao seu formulário do Elementor.
 
 ## Como usar?
-Em breve.
+Aprenda a usar: https://www.youtube.com/watch?v=GqcOK4Cuk2g
 
 
 ## Links de Apoio (para dev)
