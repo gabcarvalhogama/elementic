@@ -3,7 +3,7 @@
  * Plugin Name: Elementic
  * Plugin URI: http://www.gabcarvalhogama.com.br/conheca-o-elementic
  * Description: Integre o seu Elementor com o Mautic DE GRAÇA.
- * Version: 1.0
+ * Version: 1.1
  * Author: Gabriel Carvalho Gama
  * Author URI: http://www.gabcarvalhogama.com.br
  */
