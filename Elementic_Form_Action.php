@@ -78,11 +78,32 @@
                 $fields[ $id ] = $field['value'];
             }
 		
-		
+	    $utm="";
+                
+             if (isset($raw_fields['utm_source'])){
+                       $utm .= "&utm_source=".$raw_fields['utm_source']['value'];
+                }
 
-            $response = wp_remote_post(rtrim($settings['mautic_url']['url'],"/")."/form/submit?formId=".$settings['mautic_form_id'], [
+             if (isset($raw_fields['utm_medium'])){
+                    $utm .= "&utm_medium=".$raw_fields['utm_medium']['value'];
+                }
+
+             if  (isset($raw_fields['utm_campaign'])){
+                    $utm .= "&utm_campaign=".$raw_fields['utm_campaign']['value'];
+                }
+
+             if  (isset($raw_fields['utm_content'])){
+                    $utm .= "&utm_content=".$raw_fields['utm_content']['value'];
+                }
+
+             if  (isset($raw_fields['utm_term'])){
+                    $utm .= "&utm_term=".$raw_fields['utm_term']['value'];
+                } 	
+
+            $response = wp_remote_post(rtrim($settings['mautic_url']['url'],"/")."/form/submit?formId=".$settings['mautic_form_id'].$utm, [
                 'body' => ["mauticform" => $fields],
-				'headers' => [ 'X-Forwarded-For' => $_SERVER[ "REMOTE_ADDR" ]]
+		'headers' => [ 'Client-Ip' => $_SERVER[ "REMOTE_ADDR" ]],
+                'headers' => [ 'X-Forwarded-For' => $_SERVER[ "REMOTE_ADDR" ]]
             ] );
 
 
