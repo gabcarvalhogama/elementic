@@ -9,18 +9,14 @@
  */
 
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
+
+
+function elementic_addon(){	
+	require_once( __DIR__ . '/includes/plugin.php' );
+
+	// Run the plugin
+	\Elementic\Plugin::instance();
 }
 
-add_action( 'elementor_pro/init', function() {
-	// Here its safe to include our action class file
-	require "Elementic_Form_Action.php";
-
-
-	// Instantiate the action class
-	$elementic = new Elementic_Form_Action();
-
-	// Register the action with form widget
-	\ElementorPro\Plugin::instance()->modules_manager->get_modules( 'forms' )->add_form_action( $elementic->get_name(), $elementic );
-});
+add_action( 'plugins_loaded', 'elementic_addon' );
